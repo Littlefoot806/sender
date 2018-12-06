@@ -57,7 +57,6 @@ def send_mail(driver, emails, letter):
 	except Exception as e:
 		print(e)
 		
-	#to = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//textarea[@name="to"]')))
 	theme = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//input[@name="subjectbox"]')))
 	body = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//div[@aria-label="Тело письма"]')))
 	
@@ -69,13 +68,11 @@ def send_mail(driver, emails, letter):
 	
 	button = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@aria-label,"Отправить") and @role="button"]')))
 	button.click()
-	sleep(5)
-	print(to, theme, body, button)
 	sleep(10)
 	
 def main():
-	login = "pawlik806@gmail.com" # google email
-	passwd = "littlefoot806"      # google password
+	login = "example@gmail.com" # google email
+	passwd = "passExample"      # google password
 	print('Starting...')
 
 
